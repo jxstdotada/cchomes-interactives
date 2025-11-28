@@ -1,0 +1,225 @@
+<div class="coastal-infographic">
+  <h2 class="ci-title">Smart Coastal Home Design Navigator</h2>
+  <p class="ci-subtitle">Click a category to explore tailored Myrtle Beach layout strategies.</p>
+
+  <!-- Category Buttons -->
+  <div class="ci-nav">
+    <button data-target="flood" class="ci-btn active">
+      <span class="ci-icon">🌊</span> Flood Safety
+    </button>
+    <button data-target="aging" class="ci-btn">
+      <span class="ci-icon">👵</span> Aging in Place
+    </button>
+    <button data-target="rental" class="ci-btn">
+      <span class="ci-icon">🏡</span> Rental Ready
+    </button>
+    <button data-target="resale" class="ci-btn">
+      <span class="ci-icon">💰</span> Resale Value
+    </button>
+  </div>
+
+  <!-- Dynamic Panels -->
+  <div class="ci-panels">
+
+    <!-- Flood Safety -->
+    <div id="ci-panel-flood" class="ci-panel active">
+      <h3 class="ci-panel-title">Flood-Smart Layout Strategy</h3>
+      <div class="ci-panel-content">
+        <ul>
+          <li>Elevate main living above flood zone.</li>
+          <li>Use ground level for parking + storage only.</li>
+          <li>Place HVAC & electrical systems on upper floors.</li>
+          <li>Create upper-level porches instead of slab patios.</li>
+        </ul>
+        <p class="ci-note">Best for raised beach lots & marsh-adjacent homes along the Grand Strand.</p>
+      </div>
+    </div>
+
+    <!-- Aging in Place -->
+    <div id="ci-panel-aging" class="ci-panel">
+      <h3 class="ci-panel-title">Age-Ready Layout Strategy</h3>
+      <div class="ci-panel-content">
+        <ul>
+          <li>Main-level primary suite with nearby laundry.</li>
+          <li>Wide passages & 3' interior doorways.</li>
+          <li>Curbless showers + future-friendly bath layout.</li>
+          <li>Pre-plan elevator shaft or stacked closets.</li>
+        </ul>
+        <p class="ci-note">Perfect for long-term living in Carolina Forest, Market Common & 55+ buyers.</p>
+      </div>
+    </div>
+
+    <!-- Rental -->
+    <div id="ci-panel-rental" class="ci-panel">
+      <h3 class="ci-panel-title">Rental-Optimized Layout Strategy</h3>
+      <div class="ci-panel-content">
+        <ul>
+          <li>Guest bedrooms grouped away from owner suite.</li>
+          <li>Multiple living spaces (loft, den, porch).</li>
+          <li>Durable floors + easy-clean finishes.</li>
+          <li>Lockable owner storage & secure pantry.</li>
+        </ul>
+        <p class="ci-note">Ideal for short-term rental zones like North Myrtle Beach & Surfside.</p>
+      </div>
+    </div>
+
+    <!-- Resale -->
+    <div id="ci-panel-resale" class="ci-panel">
+      <h3 class="ci-panel-title">Resale-Focused Layout Strategy</h3>
+      <div class="ci-panel-content">
+        <ul>
+          <li>Indoor-outdoor “livable four”: kitchen, dining, living, porch.</li>
+          <li>No awkward bonus rooms or leftover spaces.</li>
+          <li>Orient main living areas toward water or golf views.</li>
+          <li>Place drop zones where people actually enter.</li>
+        </ul>
+        <p class="ci-note">Maximizes listing value across all Grand Strand communities.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Styles -->
+<style>
+  .coastal-infographic {
+    font-family: system-ui, sans-serif;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 2rem;
+    max-width: 960px;
+    margin: 2.5rem auto;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    border: 1px solid #e0e7ff;
+  }
+
+  .ci-title {
+    text-align: center;
+    margin-bottom: 0.4rem;
+    font-size: 1.9rem;
+    color: #0f172a;
+  }
+
+  .ci-subtitle {
+    text-align: center;
+    color: #475569;
+    margin-bottom: 2rem;
+  }
+
+  /* Navigation Buttons */
+  .ci-nav {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .ci-btn {
+    background: #f1f5f9;
+    padding: 0.7rem 1rem;
+    border-radius: 14px;
+    border: 1px solid #cbd5e1;
+    cursor: pointer;
+    font-size: 0.93rem;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    transition: 0.2s ease;
+  }
+  .ci-btn:hover {
+    background: #e2e8f0;
+    transform: translateY(-2px);
+  }
+  .ci-btn.active {
+    background: #0ea5e9;
+    color: white;
+    border-color: #0284c7;
+  }
+
+  .ci-icon {
+    font-size: 1.2rem;
+  }
+
+  /* Panels */
+  .ci-panels {
+    position: relative;
+    min-height: 220px;
+  }
+
+  .ci-panel {
+    display: none;
+    animation: fadeSlide 0.35s ease forwards;
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    padding: 1.5rem;
+    border-radius: 14px;
+    border-left: 5px solid #0ea5e9;
+    box-shadow: inset 0 0 14px rgba(0,0,0,0.05);
+  }
+
+  .ci-panel.active {
+    display: block;
+  }
+
+  .ci-panel-title {
+    margin-top: 0;
+    font-size: 1.35rem;
+    color: #075985;
+  }
+
+  .ci-panel-content ul {
+    padding-left: 1.2rem;
+  }
+
+  .ci-panel-content li {
+    margin-bottom: 0.4rem;
+    color: #0f172a;
+  }
+
+  .ci-note {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #475569;
+    background: rgba(14,165,233,0.15);
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+  }
+
+  @keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Mobile */
+  @media(max-width: 600px) {
+    .ci-btn {
+      flex: 1 1 45%;
+      justify-content: center;
+    }
+  }
+</style>
+
+
+<!-- Script -->
+<script>
+  const buttons = document.querySelectorAll(".ci-btn");
+  const panels = document.querySelectorAll(".ci-panel");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const target = button.dataset.target;
+
+      // Update active button
+      buttons.forEach(b => b.classList.remove("active"));
+      button.classList.add("active");
+
+      // Update active panel
+      panels.forEach(panel => {
+        panel.classList.remove("active");
+      });
+
+      document.querySelector(`#ci-panel-${target}`).classList.add("active");
+    });
+  });
+</script>
