@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>2026 Floor Plan Trends – Interactive Infographic 2.0</title>
+<style>
+  body { font-family: 'Inter', sans-serif; margin: 0; background:#eef4f8; color:#0a2540; }
+  header { background:linear-gradient(135deg, #1e5fa3, #37a6d1); color:#fff; padding:40px 20px; text-align:center; }
+  h1 { font-size:2.4rem; margin-bottom:6px; }
+  p { margin:0; }
+
+  .container { max-width:1100px; margin:40px auto; padding:20px; }
+
+  .grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap:22px;
+  }
+
+  .card {
+    background:#fff;
+    border-radius:16px;
+    padding:24px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .card:hover { transform:translateY(-6px); box-shadow:0 12px 24px rgba(0,0,0,0.12); }
+
+  .badge {
+    position:absolute; top:16px; right:-30px;
+    background:#37a6d1; color:#fff; padding:6px 40px;
+    transform:rotate(45deg);
+    font-size:12px; font-weight:600;
+  }
+
+  .card h2 { margin:0 0 10px; font-size:1.4rem; }
+  .summary { font-size:0.95rem; color:#35526b; }
+  .details { display:none; margin-top:16px; animation:fade .4s ease forwards; }
+
+  @keyframes fade {
+    from { opacity:0; transform:translateY(10px); }
+    to { opacity:1; transform:translateY(0); }
+  }
+
+  .chip {
+    background:#e9f4ff;
+    color:#1e5fa3;
+    padding:5px 12px;
+    border-radius:20px;
+    display:inline-block;
+    font-size:12px;
+    margin:6px 6px 0 0;
+  }
+
+  .card.expanded { border:2px solid #1e5fa3; }
+</style>
+</head>
+<body>
+<header>
+  <h1>2026 Floor Plan Trends</h1>
+  <p>Interactive • Animated • Myrtle Beach Ready</p>
+</header>
+<div class="container">
+
+  <div class="grid">
+
+    <div class="card" onclick="toggleCard(this)">
+      <div class="badge">Top Trend</div>
+      <h2>Multi-Suite Living</h2>
+      <p class="summary">Private suites designed for guests, aging parents, and resale value.</p>
+      <div class="details">
+        <p><strong>Why buyers love it:</strong> Privacy, comfort, and future-proof design.</p>
+        <ul>
+          <li>First-floor suites with zero-entry showers</li>
+          <li>Private entrances or foyer buffering</li>
+          <li>Universal layouts for multigenerational living</li>
+        </ul>
+        <span class="chip">High ROI</span><span class="chip">Aging-in-Place</span>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <h2>Next-Gen Flex Rooms</h2>
+      <p class="summary">One room. Five possibilities. 2026’s most adaptable space.</p>
+      <div class="details">
+        <p><strong>What makes flex rooms amazing:</strong> They evolve with your life.</p>
+        <ul>
+          <li>Office ↔ guest room in seconds</li>
+          <li>Storage walls + Murphy bed options</li>
+          <li>Sound-treated doors for privacy</li>
+        </ul>
+        <span class="chip">Hybrid Work</span><span class="chip">Guest-Friendly</span>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <div class="badge" style="background:#d18d37;">Airbnb</div>
+      <h2>Airbnb-Ready Layouts</h2>
+      <p class="summary">Engineered for Myrtle Beach tourism and guest comfort.</p>
+      <div class="details">
+        <p><strong>Why it's trending:</strong> High rental demand along the Grand Strand.</p>
+        <ul>
+          <li>Separate suite entry + privacy hallway</li>
+          <li>Durable LVP floors for sand & spills</li>
+          <li>Compact kitchenette or mini-fridge zone</li>
+        </ul>
+        <span class="chip">Rental Income</span><span class="chip">Tourism-Optimized</span>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <h2>Aging-in-Place Design</h2>
+      <p class="summary">Accessibility features that maintain comfort and independence.</p>
+      <div class="details">
+        <p><strong>Retiree-approved upgrades:</strong></p>
+        <ul>
+          <li>No-step garage & main entry</li>
+          <li>Wide hallways + lever handles</li>
+          <li>Grab-bar ready shower layouts</li>
+        </ul>
+        <span class="chip">Future-Proof</span><span class="chip">Safe Design</span>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <h2>Privacy Zoning</h2>
+      <p class="summary">Intentional separation between bedrooms and active living spaces.</p>
+      <div class="details">
+        <p><strong>Improves:</strong> Noise, comfort, hosting quality.</p>
+        <ul>
+          <li>Bedroom wings & split-floor layouts</li>
+          <li>Loft or flex room as a buffer space</li>
+          <li>Vestibules before hallways</li>
+        </ul>
+        <span class="chip">Family Comfort</span><span class="chip">Guest Privacy</span>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <h2>2026 Resale Boosters</h2>
+      <p class="summary">Design elements that buyers will still want in 2030.</p>
+      <div class="details">
+        <p><strong>Top-value upgrades:</strong></p>
+        <ul>
+          <li>Oversized kitchen islands</li>
+          <li>Screened porches + grilling patios</li>
+          <li>Walk-in pantries + drop zones</li>
+        </ul>
+        <span class="chip">Long-Term ROI</span><span class="chip">Market-Ready</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+function toggleCard(card){
+  card.classList.toggle('expanded');
+  const details = card.querySelector('.details');
+  if(details.style.display === 'block'){
+    details.style.display = 'none';
+  } else {
+    details.style.display = 'block';
+  }
+}
+</script>
+</body>
+</html>
