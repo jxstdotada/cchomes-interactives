@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Airbnb + Aging Design 2026 Infographic</title>
+
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background: #f7f9fb;
+    color: #1f1f1f;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .sidebar {
+    width: 240px;
+    background: #ffffff;
+    border-right: 1px solid #d8e1e8;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+
+  .tab-btn {
+    display: block;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    background: #eef3f7;
+    color: #1f1f1f;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 15px;
+  }
+
+  .tab-btn.active {
+    background: #0077cc;
+    color: #fff;
+  }
+
+  .tab-btn:hover {
+    background: #dce7f1;
+  }
+
+  .content {
+    flex: 1;
+    padding: 26px;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+
+  .content-section {
+    display: none;
+    animation: fade 0.25s ease-in-out;
+  }
+
+  .content-section.active {
+    display: block;
+  }
+
+  @keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Checklist box */
+  .checklist-box {
+    width: 280px;
+    background: #ffffff;
+    border-left: 1px solid #d8e1e8;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+
+  .checklist-box h3 {
+    font-size: 18px;
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+
+  .checklist-item {
+    margin-bottom: 12px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #0077cc;
+  }
+
+</style>
+</head>
+
+<body>
+
+<!-- LEFT TABS -->
+<div class="sidebar">
+  <h2>Design Sections</h2>
+  <div class="tab-btn active" data-tab="section1">Tourism + Retirees</div>
+  <div class="tab-btn" data-tab="section2">Universal Design</div>
+  <div class="tab-btn" data-tab="section3">STR ROI Features</div>
+  <div class="tab-btn" data-tab="section4">Smart Tech</div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="content">
+
+  <div id="section1" class="content-section active">
+    <h2>The Myrtle Beach Equation (2026)</h2>
+    <p>Myrtle Beach’s unique blend of strong tourism, retiree migration, and evolving STR regulations makes dual-purpose design a major 2026 advantage.</p>
+    <ul>
+      <li>Stable STR occupancy forecasts (AirDNA)</li>
+      <li>Retiree migration driving long-term demand</li>
+      <li>SC rental disclosure law (§27-50) shaping resale transparency</li>
+      <li>Neighborhood standouts: Market Common, Belle Harbor, Carolina Forest</li>
+    </ul>
+  </div>
+
+  <div id="section2" class="content-section">
+    <h2>Universal Design Wins (Guests + Seniors)</h2>
+    <p>Modern accessibility looks premium, photographs well, and extends your home’s long-term usability.</p>
+    <ul>
+      <li>36–42 inch hallways for mobility + luggage</li>
+      <li>Zero-step entry with wide landing</li>
+      <li>Lever handles for easier grip</li>
+      <li>Curbless shower + linear drain</li>
+      <li>Taller comfort-height toilets</li>
+      <li>Motion lighting for safety + convenience</li>
+    </ul>
+  </div>
+
+  <div id="section3" class="content-section">
+    <h2>High-ROI STR Features That Future-Proof</h2>
+    <p>Guests love these features today. Retirees love them tomorrow. Resale wins either way.</p>
+    <ul>
+      <li>Two primary suites (multigenerational flexibility)</li>
+      <li>Split-floor privacy layouts</li>
+      <li>Soundproofing between floors</li>
+      <li>Coastal-durable LVP flooring</li>
+      <li>First-floor essential living</li>
+      <li>Screened porch or low-maintenance patio</li>
+    </ul>
+  </div>
+
+  <div id="section4" class="content-section">
+    <h2>Smart Tech for STR + Aging</h2>
+    <p>Convenience for guests. Safety and autonomy for aging residents. Protection for your property.</p>
+    <ul>
+      <li>Smart locks with rotating codes</li>
+      <li>Video doorbells</li>
+      <li>Noise monitoring (non-recording)</li>
+      <li>App-controlled thermostat</li>
+      <li>Water-shutoff & leak sensors</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- CHECKLIST RIGHT -->
+<div class="checklist-box">
+  <h3>Airbnb + Age-Ready Checklist</h3>
+
+  <div class="checklist-item">
+    <input type="checkbox" />
+    <label>Zero-step entry installed</label>
+  </div>
+
+  <div class="checklist-item">
+    <input type="checkbox" />
+    <label>Wide hallways (36–42")</label>
+  </div>
+
+  <div class="checklist-item">
+    <input type="checkbox" />
+    <label>Curbless shower w/ linear drain</label>
+  </div>
+
+  <div class="checklist-item">
+    <input type="checkbox" />
+    <label>STR-ready smart lock</label>
+  </div>
+
+  <div class="checklist-item">
+    <input type="checkbox" />
+    <label>Leak / water sensors installed</label>
+  </div>
+
+  <div class="checklist-item">
+    <input type="checkbox" />
+    <label>Two primary suites</label>
+  </div>
+
+  <div class="checklist-item">
+    <input type="checkbox" />
+    <label>First-floor living essentials</label>
+  </div>
+
+  <div class="checklist-item">
+    <input type="checkbox" />
+    <label>LVP coastal-durable flooring</label>
+  </div>
+
+  <div class="checklist-item">
+    <input type="checkbox" />
+    <label>Motion-activated pathway lighting</label>
+  </div>
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('.tab-btn');
+  const sections = document.querySelectorAll('.content-section');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const tab = btn.dataset.tab;
+
+      sections.forEach(sec => {
+        sec.classList.remove('active');
+        if (sec.id === tab) sec.classList.add('active');
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
