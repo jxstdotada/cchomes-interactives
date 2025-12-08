@@ -1,0 +1,190 @@
+<div id="december-build-2026" style="width:100%; max-width:900px; margin:auto; font-family: 'Inter', sans-serif;">
+
+  <style>
+    #december-build-2026 * { box-sizing: border-box; }
+
+    .db-container {
+      background: #f8f8fc;
+      border: 1px solid #dcdceb;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .db-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-align: center;
+      color: #1a1a2e;
+    }
+
+    .db-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+
+    .db-tab {
+      padding: 10px 16px;
+      background: #e6e6f3;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.2s;
+      flex: 1;
+      min-width: 150px;
+      text-align: center;
+    }
+
+    .db-tab:hover {
+      background: #d5d5f0;
+    }
+
+    .db-tab.active {
+      background: #4a4ad8;
+      color: #fff;
+    }
+
+    .db-panel {
+      display: none;
+      background: #ffffff;
+      padding: 18px;
+      border-radius: 10px;
+      border: 1px solid #dcdceb;
+      line-height: 1.55;
+      color: #222;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px);}
+      to { opacity:1; transform: translateY(0);}
+    }
+
+    .db-panel ul {
+      padding-left: 18px;
+      margin: 10px 0;
+    }
+
+    .cta-box {
+      background: #eef0ff;
+      padding: 16px;
+      margin-top: 20px;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid #d0d4ff;
+    }
+
+    .cta-box h3 {
+      margin-top: 0;
+      font-size: 20px;
+      font-weight: 700;
+      color: #2a2a5e;
+    }
+
+    .cta-button {
+      background: #4a4ad8;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .cta-button:hover { background: #3838b8; }
+
+  </style>
+
+  <div class="db-container">
+
+    <div class="db-title">Why December Is Prime for 2026 Builds</div>
+
+    <!-- TAB BUTTONS -->
+    <div class="db-tabs">
+      <div class="db-tab active" data-panel="rates">Rate Stability</div>
+      <div class="db-tab" data-panel="land">Land Pricing</div>
+      <div class="db-tab" data-panel="permits">Permit Timelines</div>
+      <div class="db-tab" data-panel="builders">Builder Availability</div>
+      <div class="db-tab" data-panel="savings">Savings Potential</div>
+    </div>
+
+    <!-- PANELS -->
+    <div id="rates" class="db-panel" style="display:block;">
+      <h3>1. December Historically Softens Mortgage Movements</h3>
+      <ul>
+        <li>Construction-to-permanent loans often stabilize as inflation cools.</li>
+        <li>Less buyer competition improves lender incentives.</li>
+        <li>Locking before spring protects against Q1–Q2 rate bumps.</li>
+        <li>Even a 0.25% improvement can save thousands on a 2026 build.</li>
+      </ul>
+      <p><strong>Data Source:</strong> Weekly Freddie Mac PMMS® trends.</p>
+    </div>
+
+    <div id="land" class="db-panel">
+      <h3>2. Land Prices Flatten in Winter</h3>
+      <ul>
+        <li>December sees minimal buyer activity across the Grand Strand.</li>
+        <li>Lots stay longer on market in Carolina Forest, Market Common, NMB, Conway.</li>
+        <li>Sellers more flexible on pricing and closing terms before year-end.</li>
+      </ul>
+      <p>Perfect time to secure your 2026 build site before spring competition returns.</p>
+    </div>
+
+    <div id="permits" class="db-panel">
+      <h3>3. Permit Offices Run Faster Than You Think</h3>
+      <ul>
+        <li>Fewer submissions means shorter queues.</li>
+        <li>More predictable responses from Horry County + SCDOT.</li>
+        <li>December filers enter the 2026 cycle at the top, not buried in spring.</li>
+      </ul>
+      <p>Ideal for projects needing road access, drainage, or right-of-way approvals.</p>
+    </div>
+
+    <div id="builders" class="db-panel">
+      <h3>4. Builder Calendars Open Before January Rush</h3>
+      <ul>
+        <li>Crews finish year-end punch lists, freeing early-year slots.</li>
+        <li>Material pricing stabilizes before supplier updates.</li>
+        <li>Advance planning now sets you up for March–April groundbreaking.</li>
+      </ul>
+      <p>If you want a 2026 move-in, December 2025 is the moment to lock your spot.</p>
+    </div>
+
+    <div id="savings" class="db-panel">
+      <h3>5. December Incentives Hit Their Peak</h3>
+      <ul>
+        <li>Lenders push year-end rate-lock programs.</li>
+        <li>Land sellers are motivated to close before January.</li>
+        <li>Builders may offer deposits, upgrades, or studio credits.</li>
+      </ul>
+      <p>These incentives fade fast once January demand surges.</p>
+    </div>
+
+    <div class="cta-box">
+      <h3>Start Your 2026 Build the Smart Way</h3>
+      <p>Lock financing, land, and permits before the new-year rush. Carolina Crafted Homes can guide your entire build journey.</p>
+      <a class="cta-button" href="https://www.carolinacraftedhomes.com/contact-us" target="_blank">Schedule Your Consultation</a>
+    </div>
+
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('#december-build-2026 .db-tab');
+    const panels = document.querySelectorAll('#december-build-2026 .db-panel');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.style.display = 'none');
+
+        tab.classList.add('active');
+        const target = tab.getAttribute('data-panel');
+        document.getElementById(target).style.display = 'block';
+      });
+    });
+  </script>
+
+</div>
