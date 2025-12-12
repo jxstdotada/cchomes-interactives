@@ -1,0 +1,774 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Interactive Infographic: Why Multi-Gen Homes Are Surging (Myrtle Beach, 2026)</title>
+  <meta name="description" content="Interactive infographic explaining the rise of multi-generational homes in Myrtle Beach and the Grand Strand heading into 2026." />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#101a33;
+      --card2:#0f1830;
+      --text:#eaf0ff;
+      --muted:#b7c4ff;
+      --muted2:#93a3e8;
+      --line:rgba(255,255,255,.12);
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius2: 14px;
+      --ring: 0 0 0 3px rgba(153, 187, 255, .35);
+      --good:#57f2c2;
+      --warn:#ffd36e;
+      --bad:#ff6b86;
+      --accent:#7aa7ff;
+      --accent2:#9b7bff;
+      --accent3:#2ee5ff;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 800px at 20% 15%, rgba(122,167,255,.25), transparent 60%),
+                  radial-gradient(900px 600px at 80% 5%, rgba(155,123,255,.18), transparent 55%),
+                  radial-gradient(1200px 800px at 70% 85%, rgba(46,229,255,.12), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      font-family:var(--sans);
+      line-height:1.35;
+    }
+
+    a{color:inherit}
+
+    .wrap{max-width:1100px; margin:0 auto; padding:28px 18px 64px}
+
+    header{
+      display:flex; gap:18px; align-items:flex-start; justify-content:space-between;
+      margin-bottom:18px;
+    }
+
+    .brand{
+      display:flex; flex-direction:column; gap:8px;
+      padding:18px;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .kicker{
+      font-family: var(--mono);
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing:.12em;
+      text-transform: uppercase;
+    }
+
+    h1{margin:0; font-size: 26px; line-height:1.12}
+
+    .sub{
+      margin:0;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 70ch;
+    }
+
+    .topbar{
+      display:flex; flex-direction:column; gap:10px;
+      min-width: 300px;
+    }
+
+    .pillrow{
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+    }
+
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:10px 12px;
+      border-radius: 999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-size: 13px;
+      user-select:none;
+    }
+
+    .pill b{color: var(--text); font-weight:600}
+
+    .controls{
+      padding:14px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      box-shadow: var(--shadow);
+    }
+
+    .field{display:flex; flex-direction:column; gap:6px; min-width: 220px}
+    .label{font-size: 12px; color: var(--muted2)}
+    .input{
+      display:flex; gap:10px; align-items:center;
+      padding:10px 12px;
+      background: rgba(0,0,0,.18);
+      border:1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    select, input[type="range"], button{
+      font: inherit;
+      color: var(--text);
+    }
+
+    select{
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      cursor:pointer;
+    }
+
+    input[type="range"]{width:100%}
+
+    button{
+      border:none;
+      border-radius: 12px;
+      padding:10px 12px;
+      background: linear-gradient(135deg, rgba(122,167,255,.95), rgba(155,123,255,.85));
+      cursor:pointer;
+      font-weight: 650;
+      box-shadow: 0 10px 28px rgba(122,167,255,.18);
+      transition: transform .08s ease, filter .12s ease;
+      min-width: 160px;
+    }
+    button:hover{filter: brightness(1.04)}
+    button:active{transform: translateY(1px) scale(.99)}
+    button:focus{outline:none; box-shadow: var(--shadow), var(--ring)}
+
+    main{display:grid; grid-template-columns: 1.1fr .9fr; gap:16px; margin-top:14px}
+
+    @media (max-width: 940px){
+      header{flex-direction:column}
+      .topbar{min-width: unset}
+      .pillrow{justify-content:flex-start}
+      .controls{justify-content:flex-start}
+      main{grid-template-columns: 1fr}
+    }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .card header{
+      margin:0;
+      padding:16px 16px 12px;
+      border-bottom:1px solid var(--line);
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      background: rgba(0,0,0,.10);
+    }
+
+    .card h2{margin:0; font-size: 16px}
+
+    .card .content{padding:16px}
+
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    @media (max-width: 520px){.grid2{grid-template-columns:1fr}}
+
+    .tile{
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      background: rgba(0,0,0,.14);
+      padding:14px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .tile:before{
+      content:"";
+      position:absolute; inset:-60px;
+      background: radial-gradient(240px 160px at 10% 10%, rgba(122,167,255,.22), transparent 60%),
+                  radial-gradient(200px 140px at 90% 10%, rgba(155,123,255,.14), transparent 65%),
+                  radial-gradient(240px 160px at 30% 90%, rgba(46,229,255,.10), transparent 62%);
+      pointer-events:none;
+    }
+
+    .tile > *{position:relative}
+
+    .big{
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing:-0.02em;
+      margin: 6px 0 2px;
+    }
+
+    .hint{margin:0; color: var(--muted); font-size: 13px}
+
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .barwrap{display:flex; flex-direction:column; gap:10px}
+
+    .bar{
+      width:100%;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.20);
+      overflow:hidden;
+    }
+
+    .fill{
+      height:100%;
+      width: 0%;
+      background: linear-gradient(90deg, rgba(46,229,255,.95), rgba(122,167,255,.95), rgba(155,123,255,.90));
+      border-radius:999px;
+      transition: width .55s ease;
+    }
+
+    .legend{
+      display:flex; justify-content:space-between; gap:10px;
+      color: var(--muted2);
+      font-size: 12px;
+      font-family: var(--mono);
+    }
+
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+
+    details{
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      background: rgba(0,0,0,.14);
+      padding: 12px 12px;
+    }
+
+    details + details{margin-top:10px}
+
+    summary{cursor:pointer; font-weight:650}
+    summary::marker{color: var(--muted)}
+
+    .small{color: var(--muted); font-size: 13px; margin: 8px 0 0}
+
+    .divider{height:1px; background: var(--line); margin: 14px 0}
+
+    .score{
+      display:flex; align-items:baseline; justify-content:space-between; gap:12px;
+      padding: 12px;
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      background: rgba(0,0,0,.14);
+    }
+
+    .score strong{font-size: 20px}
+    .badge{
+      padding: 6px 10px;
+      border-radius: 999px;
+      border:1px solid var(--line);
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text);
+      background: rgba(255,255,255,.04);
+    }
+
+    .badge.good{box-shadow: 0 0 0 2px rgba(87,242,194,.18) inset;}
+    .badge.warn{box-shadow: 0 0 0 2px rgba(255,211,110,.16) inset;}
+    .badge.bad{box-shadow: 0 0 0 2px rgba(255,107,134,.18) inset;}
+
+    .foot{
+      margin-top: 14px;
+      color: var(--muted2);
+      font-size: 12px;
+    }
+
+    .toast{
+      position: fixed;
+      left: 50%;
+      bottom: 16px;
+      transform: translateX(-50%);
+      background: rgba(16,26,51,.92);
+      border:1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: 999px;
+      padding: 10px 12px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      opacity:0;
+      pointer-events:none;
+      transition: opacity .25s ease, transform .25s ease;
+    }
+    .toast.show{opacity:1; transform: translateX(-50%) translateY(-4px)}
+    .toast code{font-family: var(--mono); color: var(--muted)}
+
+    .sr{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <section class="brand" aria-label="Header">
+        <div class="kicker">Carolina Crafted Homes • Myrtle Beach / Grand Strand • 2026 Outlook</div>
+        <h1>From Senior Boom to the Sandwiched Generation<br/>Why Multi-Gen Homes Are Surging</h1>
+        <p class="sub">
+          Use the controls to explore *why* multi-generational living is rising—and what a home needs to work for three generations.
+          (This is an educational tool, not a pricing calculator.)
+        </p>
+      </section>
+
+      <aside class="topbar" aria-label="Controls">
+        <div class="pillrow">
+          <div class="pill"><span>Post Date</span><b>2025-12-13</b></div>
+          <div class="pill"><span>Focus</span><b>Myrtle Beach</b></div>
+          <div class="pill"><span>Lens</span><b>2026</b></div>
+        </div>
+
+        <div class="controls" role="group" aria-label="Interactive settings">
+          <div class="field">
+            <div class="label">Grand Strand lifestyle priority</div>
+            <div class="input">
+              <select id="priority" aria-label="Lifestyle priority">
+                <option value="care">Care + accessibility (seniors)</option>
+                <option value="schools">Schools + commutes (kids)</option>
+                <option value="budget">Budget + shared expenses</option>
+                <option value="privacy">Privacy + independence</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="label">How “sandwiched” is the household?</div>
+            <div class="input" style="gap:12px">
+              <input id="sandwich" type="range" min="0" max="100" value="65" aria-label="Sandwiched intensity" />
+              <span id="sandwichVal" class="tag" aria-live="polite">65 / 100</span>
+            </div>
+          </div>
+
+          <button id="copy" type="button">Copy share snippet</button>
+        </div>
+      </aside>
+    </header>
+
+    <main>
+      <!-- LEFT: Headline metrics + driver bars -->
+      <section class="card" aria-label="Drivers and metrics">
+        <header>
+          <h2>What’s driving the surge (interactive)</h2>
+          <span class="tag" id="regionTag">Carolina Forest • Market Common • Socastee</span>
+        </header>
+        <div class="content">
+          <div class="grid2">
+            <div class="tile" aria-label="Primary driver">
+              <span class="tag" id="driverTag">Primary driver: Budget + shared expenses</span>
+              <div class="big" id="driverScore">78</div>
+              <p class="hint" id="driverHint">When costs rise, households combine to stabilize monthly living.</p>
+            </div>
+
+            <div class="tile" aria-label="Home readiness">
+              <span class="tag">Multi-gen “home readiness”</span>
+              <div class="big" id="readiness">B+</div>
+              <p class="hint">Based on layout + accessibility + privacy (set by your controls).</p>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="barwrap" aria-label="Driver mix">
+            <div class="legend"><span>Driver mix</span><span id="mixLabel">Balanced</span></div>
+
+            <div>
+              <div class="legend"><span>Care needs</span><span id="carePct">0%</span></div>
+              <div class="bar"><div class="fill" id="careFill"></div></div>
+            </div>
+
+            <div>
+              <div class="legend"><span>Affordability</span><span id="affPct">0%</span></div>
+              <div class="bar"><div class="fill" id="affFill"></div></div>
+            </div>
+
+            <div>
+              <div class="legend"><span>Adult kids at home</span><span id="kidsPct">0%</span></div>
+              <div class="bar"><div class="fill" id="kidsFill"></div></div>
+            </div>
+
+            <div>
+              <div class="legend"><span>Privacy + independence</span><span id="priPct">0%</span></div>
+              <div class="bar"><div class="fill" id="priFill"></div></div>
+            </div>
+
+            <div class="chips" aria-label="Key takeaways">
+              <span class="tag" id="chip1">First-floor suite</span>
+              <span class="tag" id="chip2">Quiet zone / flex room</span>
+              <span class="tag" id="chip3">Two living areas</span>
+              <span class="tag" id="chip4">Future-proof resale</span>
+            </div>
+          </div>
+
+          <p class="foot">
+            Tip: Multi-gen homes sell best when the layout can “snap back” into a traditional plan (think: suite + flex space, not permanent weird walls).
+          </p>
+        </div>
+      </section>
+
+      <!-- RIGHT: Checklist + scorecard + FAQ-like explainer -->
+      <aside class="card" aria-label="Checklist and planner">
+        <header>
+          <h2>Is a multi-gen home right for your family?</h2>
+          <span class="tag" id="scoreTag">Planner</span>
+        </header>
+        <div class="content">
+          <div class="score" aria-label="Fit score">
+            <div>
+              <div class="label">Multi-gen fit score</div>
+              <strong id="fitScore">7.8 / 10</strong>
+            </div>
+            <span id="fitBadge" class="badge good">STRONG FIT</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <details open>
+            <summary>2026 checklist: must-have spaces</summary>
+            <p class="small" id="listA">
+              • First-floor bedroom + full bath<br/>
+              • A second living area (bonus room / den)<br/>
+              • Storage that won’t start a family war<br/>
+              • Easy path to the kitchen (no obstacle course)
+            </p>
+          </details>
+
+          <details>
+            <summary>Privacy rules that prevent drama</summary>
+            <p class="small" id="listB">
+              • Define “quiet hours” and shared spaces upfront<br/>
+              • Plan sound separation between suites<br/>
+              • Consider a private entrance for long-term guests<br/>
+              • One calendar for everyone (yes, really)
+            </p>
+          </details>
+
+          <details>
+            <summary>Local Myrtle Beach watch-outs</summary>
+            <p class="small" id="listC">
+              • HOA rules about long-term guests or separate entrances<br/>
+              • Traffic patterns in Carolina Forest during peak hours<br/>
+              • Proximity to healthcare, shopping, and daily errands<br/>
+              • Flood zones and insurance questions near the coast
+            </p>
+          </details>
+
+          <div class="divider"></div>
+
+          <div class="tile" aria-label="Neighborhood suggestions">
+            <span class="tag">Where it often works well</span>
+            <p class="small" id="neighborhoods">
+              <b>Carolina Forest:</b> newer layouts + space to flex<br/>
+              <b>Market Common:</b> lifestyle + walkable amenities<br/>
+              <b>Socastee:</b> practical access + varied home styles
+            </p>
+          </div>
+
+          <p class="foot">
+            Want this customized to a specific neighborhood or floor plan? Add your listing links and we can tailor the checklist.
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">
+      <span>Copied:</span>
+      <code id="toastText"></code>
+    </div>
+  </div>
+
+  <script>
+    // --- Simple, transparent “infographic logic” ---
+    // This tool is intentionally not a market/pricing predictor.
+    // It maps your selections to a driver mix + “fit score” for storytelling and education.
+
+    const els = {
+      priority: document.getElementById('priority'),
+      sandwich: document.getElementById('sandwich'),
+      sandwichVal: document.getElementById('sandwichVal'),
+      driverTag: document.getElementById('driverTag'),
+      driverScore: document.getElementById('driverScore'),
+      driverHint: document.getElementById('driverHint'),
+      readiness: document.getElementById('readiness'),
+      mixLabel: document.getElementById('mixLabel'),
+      careFill: document.getElementById('careFill'),
+      affFill: document.getElementById('affFill'),
+      kidsFill: document.getElementById('kidsFill'),
+      priFill: document.getElementById('priFill'),
+      carePct: document.getElementById('carePct'),
+      affPct: document.getElementById('affPct'),
+      kidsPct: document.getElementById('kidsPct'),
+      priPct: document.getElementById('priPct'),
+      chip1: document.getElementById('chip1'),
+      chip2: document.getElementById('chip2'),
+      chip3: document.getElementById('chip3'),
+      chip4: document.getElementById('chip4'),
+      fitScore: document.getElementById('fitScore'),
+      fitBadge: document.getElementById('fitBadge'),
+      scoreTag: document.getElementById('scoreTag'),
+      copy: document.getElementById('copy'),
+      toast: document.getElementById('toast'),
+      toastText: document.getElementById('toastText'),
+      neighborhoods: document.getElementById('neighborhoods'),
+      regionTag: document.getElementById('regionTag'),
+    };
+
+    const PRIORITIES = {
+      care: {
+        label: 'Care + accessibility (seniors)',
+        hint: 'More care needs = first-floor suites, safer bathrooms, and easy daily routines.',
+        chips: ['First-floor suite', 'Walk-in shower', 'Wide pathways', 'Close to healthcare'],
+        neighborhoods: `
+          <b>Carolina Forest:</b> newer homes with first-floor suites<br/>
+          <b>Socastee:</b> practical access to services + variety<br/>
+          <b>Little River:</b> calmer pace with space to spread out
+        `,
+        regionTag: 'Carolina Forest • Socastee • Little River'
+      },
+      schools: {
+        label: 'Schools + commutes (kids)',
+        hint: 'When kids are the driver, you want flex rooms, storage, and traffic-smart routes.',
+        chips: ['Flex room / homework zone', 'Storage wins', 'Two living areas', 'Commute buffer'],
+        neighborhoods: `
+          <b>Carolina Forest:</b> space + family-focused layouts<br/>
+          <b>Forestbrook:</b> central access with room to grow<br/>
+          <b>Market Common area:</b> amenities + convenience
+        `,
+        regionTag: 'Carolina Forest • Forestbrook • Market Common'
+      },
+      budget: {
+        label: 'Budget + shared expenses',
+        hint: 'Affordability pressure pushes households together—shared costs, shared equity, shared sanity.',
+        chips: ['Shared expenses', 'Energy efficiency', 'Durable finishes', 'Adaptable layout'],
+        neighborhoods: `
+          <b>Socastee:</b> practical value + convenience<br/>
+          <b>Forestbrook:</b> central access and mixed inventory<br/>
+          <b>Conway:</b> often more space for the dollar
+        `,
+        regionTag: 'Socastee • Forestbrook • Conway'
+      },
+      privacy: {
+        label: 'Privacy + independence',
+        hint: 'Privacy is the make-or-break feature: separate suites, sound control, and defined shared spaces.',
+        chips: ['Suite separation', 'Sound buffers', 'Private entrance option', 'Quiet zone'],
+        neighborhoods: `
+          <b>Carolina Forest:</b> layouts with bonus spaces<br/>
+          <b>Little River:</b> room for separate wings / entrances<br/>
+          <b>Murrells Inlet:</b> lifestyle + flexible plans
+        `,
+        regionTag: 'Carolina Forest • Little River • Murrells Inlet'
+      }
+    };
+
+    function clamp(n, a, b){ return Math.max(a, Math.min(b, n)); }
+
+    function computeMix(priorityKey, sandwich){
+      // Base weights
+      let care = 25, aff = 25, kids = 25, pri = 25;
+
+      // Sandwich intensity increases care + kids pressure simultaneously
+      // Range: 0..100
+      const s = sandwich / 100;
+      care += 18 * s;
+      kids += 18 * s;
+      aff  += 10 * s;
+      pri  += 6  * s;
+
+      // Priority nudges
+      if(priorityKey === 'care'){ care += 20; pri += 8; }
+      if(priorityKey === 'schools'){ kids += 20; aff += 6; }
+      if(priorityKey === 'budget'){ aff += 22; care += 6; }
+      if(priorityKey === 'privacy'){ pri += 22; kids += 6; }
+
+      // Normalize to 100
+      const total = care + aff + kids + pri;
+      care = (care/total)*100;
+      aff  = (aff/total)*100;
+      kids = (kids/total)*100;
+      pri  = (pri/total)*100;
+
+      return {care, aff, kids, pri};
+    }
+
+    function gradeFromScore(score){
+      if(score >= 9.0) return 'A';
+      if(score >= 8.3) return 'A-';
+      if(score >= 7.6) return 'B+';
+      if(score >= 6.9) return 'B';
+      if(score >= 6.2) return 'B-';
+      if(score >= 5.5) return 'C+';
+      if(score >= 4.8) return 'C';
+      return 'C-';
+    }
+
+    function badgeFromScore(score){
+      if(score >= 7.6) return {text:'STRONG FIT', cls:'good'};
+      if(score >= 6.2) return {text:'POSSIBLE FIT', cls:'warn'};
+      return {text:'NEEDS PLANNING', cls:'bad'};
+    }
+
+    function mixLabel(m){
+      const arr = [
+        ['Care', m.care],
+        ['Affordability', m.aff],
+        ['Adult kids', m.kids],
+        ['Privacy', m.pri]
+      ].sort((a,b)=>b[1]-a[1]);
+
+      const top = arr[0][1];
+      const second = arr[1][1];
+      if(top - second < 6) return 'Balanced';
+      return `Top driver: ${arr[0][0]}`;
+    }
+
+    function driverSummary(priorityKey, m){
+      const p = PRIORITIES[priorityKey];
+      const top = [
+        ['Care needs', m.care],
+        ['Affordability', m.aff],
+        ['Adult kids at home', m.kids],
+        ['Privacy + independence', m.pri]
+      ].sort((a,b)=>b[1]-a[1])[0];
+
+      // A friendly “driver score” for visual punch
+      const driverScore = Math.round(55 + (top[1] * 0.45)); // 55..100-ish
+
+      let hint = p.hint;
+      if(top[0].includes('Affordability')) hint = 'Households combine to share costs, build equity, and reduce financial stress.';
+      if(top[0].includes('Care')) hint = 'Planning for aging-in-place makes first-floor suites and safety upgrades essential.';
+      if(top[0].includes('Adult')) hint = 'More adults under one roof = a bigger need for flex rooms and storage.';
+      if(top[0].includes('Privacy')) hint = 'Privacy prevents burnout—separate suites and sound separation matter more than extra square footage.';
+
+      return { driverScore, tag:`Primary driver: ${top[0]}`, hint };
+    }
+
+    function fitScore(priorityKey, sandwich, m){
+      // Construct a narrative “fit score” (0..10)
+      // Higher sandwich intensity increases need; fit increases when priority aligns with high privacy/care readiness.
+      const s = sandwich/100;
+
+      // Encourage planning: higher needs should increase fit *if* privacy/care are weighted.
+      let base = 5.6 + (s * 2.2);
+
+      // Priority bonuses
+      if(priorityKey === 'care') base += (m.care/100) * 1.4;
+      if(priorityKey === 'budget') base += (m.aff/100) * 1.4;
+      if(priorityKey === 'schools') base += (m.kids/100) * 1.2;
+      if(priorityKey === 'privacy') base += (m.pri/100) * 1.6;
+
+      // Coastal reality check: if privacy is low but sandwich is high, friction risk
+      if(s > 0.7 && m.pri < 22) base -= 0.8;
+
+      // Clamp
+      return clamp(base, 3.8, 9.7);
+    }
+
+    function setFill(el, pct){
+      el.style.width = `${pct.toFixed(0)}%`;
+    }
+
+    function render(){
+      const priorityKey = els.priority.value;
+      const sandwich = Number(els.sandwich.value);
+      els.sandwichVal.textContent = `${sandwich} / 100`;
+
+      const m = computeMix(priorityKey, sandwich);
+
+      // Bars
+      setFill(els.careFill, m.care);
+      setFill(els.affFill, m.aff);
+      setFill(els.kidsFill, m.kids);
+      setFill(els.priFill, m.pri);
+      els.carePct.textContent = `${m.care.toFixed(0)}%`;
+      els.affPct.textContent  = `${m.aff.toFixed(0)}%`;
+      els.kidsPct.textContent = `${m.kids.toFixed(0)}%`;
+      els.priPct.textContent  = `${m.pri.toFixed(0)}%`;
+
+      els.mixLabel.textContent = mixLabel(m);
+
+      // Driver
+      const d = driverSummary(priorityKey, m);
+      els.driverTag.textContent = d.tag;
+      els.driverScore.textContent = String(d.driverScore);
+      els.driverHint.textContent = d.hint;
+
+      // Chips + neighborhood suggestion
+      const p = PRIORITIES[priorityKey];
+      els.chip1.textContent = p.chips[0];
+      els.chip2.textContent = p.chips[1];
+      els.chip3.textContent = p.chips[2];
+      els.chip4.textContent = p.chips[3];
+      els.neighborhoods.innerHTML = p.neighborhoods;
+      els.regionTag.textContent = p.regionTag;
+
+      // Fit score + grade
+      const fs = fitScore(priorityKey, sandwich, m);
+      els.fitScore.textContent = `${fs.toFixed(1)} / 10`;
+      const badge = badgeFromScore(fs);
+      els.fitBadge.textContent = badge.text;
+      els.fitBadge.classList.remove('good','warn','bad');
+      els.fitBadge.classList.add(badge.cls);
+
+      const grade = gradeFromScore(fs);
+      els.readiness.textContent = grade;
+
+      els.driverTag.textContent = d.tag;
+      els.scoreTag.textContent = `Priority: ${p.label}`;
+    }
+
+    function showToast(text){
+      els.toastText.textContent = text;
+      els.toast.classList.add('show');
+      window.clearTimeout(showToast._t);
+      showToast._t = window.setTimeout(()=>els.toast.classList.remove('show'), 1800);
+    }
+
+    async function copyShare(){
+      const priorityKey = els.priority.value;
+      const sandwich = Number(els.sandwich.value);
+      const snippet = `Myrtle Beach multi-gen planner (2026): priority=${priorityKey}, sandwiched=${sandwich}/100. Key: plan for privacy + first-floor suite. (Carolina Crafted Homes)`;
+      try{
+        await navigator.clipboard.writeText(snippet);
+        showToast(snippet);
+      }catch(e){
+        // Fallback
+        const ta = document.createElement('textarea');
+        ta.value = snippet;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+        showToast(snippet);
+      }
+    }
+
+    // Events
+    els.priority.addEventListener('change', render);
+    els.sandwich.addEventListener('input', render);
+    els.copy.addEventListener('click', copyShare);
+
+    // Init
+    render();
+  </script>
+</body>
+</html>
